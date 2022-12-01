@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="test.docx" />
     <None Remove="ĐƯỜNG CF THỐNG NHẤT%282%29.xlsx" />
   </ItemGroup>
 
@@ -24,12 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="test.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ĐƯỜNG CF THỐNG NHẤT(2).xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspose.Words" Version="22.11.0" />
     <PackageReference Include="Bytescout.Spreadsheet" Version="4.6.0.2025" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.18.0" />
     <PackageReference Include="IronXL.Excel" Version="2022.11.10251" />

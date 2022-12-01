@@ -3,4 +3,5 @@ using ReadFile;
 
 string strDoc = @"D:\C#\Project\ReadFile\ĐƯỜNG CF THỐNG NHẤT(2).xlsx";
 var myExcelReading = new ExcelReading();
-myExcelReading.ReadExcel(strDoc);
+var myWordReading = new WordReading();
+myWordReading.ReadDocx();
