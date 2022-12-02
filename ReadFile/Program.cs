@@ -2,6 +2,7 @@
 using ReadFile;
 
 string strDoc = @"D:\C#\Project\ReadFile\ĐƯỜNG CF THỐNG NHẤT(2).xlsx";
+string filepath = @"C:\Users\deheus\My Projects\ReadFile\ReadFile\75665880_BHOA_GIAO HANG 18.12.2022.docx";
 var myExcelReading = new ExcelReading();
 var myWordReading = new WordReading();
-myWordReading.ReadDocx();
+myWordReading.ReadDocx(filepath);

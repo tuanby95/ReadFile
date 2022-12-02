@@ -1,4 +1,5 @@
-﻿using Aspose.Words;
+﻿using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,17 @@ namespace ReadFile
 {
     internal class WordReading
     {
-        public void ReadDocx()
+        public void ReadDocx(string filepath)
         {
-            Document document = new Document(@"D:\C#\Project\ReadFile\ReadFile\test.docx");
-            document.
-            Document _document = new Document();
-            DocumentBuilder builder = new DocumentBuilder(_document);
-            _document.Append(document);
-            _document.Save("mytestdocx.docx");
+            using (WordprocessingDocument wordDocument = WordprocessingDocument.Open(filepath, false))
+            {
+                var paragraphs = wordDocument.MainDocumentPart.RootElement.Descendants<Paragraph>();
+                foreach (var paragraph in paragraphs)
+                {
+                    Console.WriteLine(paragraph.InnerText);
+                }
+                Console.ReadKey();
+            }
         }
     }
 }
